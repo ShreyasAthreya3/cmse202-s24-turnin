@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Computational Modeling and Data Analysis II &#8212; CMSE 202 Course Website</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/logo.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CMSE 202" href="course_materials/CMSE202_Syllabus.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CMSE 202 Course Website</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Materials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_materials/CMSE202_Syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_materials/CMSE202_Calendar.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_materials/SoftwareSetupGuide.html">
+   Software Setup Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_materials/CMSE202_GenerativeAI_Policy.html">
+   Generative AI Policy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/7/79/Unix_command_cheatsheet.pdf">
+   CLI (Unix/Mac/Linux) commands cheat sheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://www.dba-oracle.com/t_windows_dos_unix_linux_commands.htm">
+   Windows vs Unix commands
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://wac-cdn.atlassian.com/dam/jcr:e7e22f25-bba2-4ef1-a197-53f46b6df4a5/SWTM-2088_Atlassian-Git-Cheatsheet.pdf?cdnVersion=525">
+   Git Cheat Sheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://raw.githubusercontent.com/msu-cmse-courses/cmse202-supplemental-data/main/documents/How-to-Access-Anaconda-Powershell-Prompt.pdf">
+   How to Access “Anaconda Powershell Prompt” (for Windows users)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_materials/Pull_Request_Guide.html">
+   Making and merging Pull Requests on GitHub
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Semester Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_materials/SemesterProjectDetails.html">
+   Semester Project Details
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_materials/CMSE202_FinalProjectRequirementsAndGradingRubric.html">
+   Semester Project Requirements and Grading Rubric
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://raw.githubusercontent.com/msu-cmse-courses/cmse202-supplemental-data/main/documents/Presentation_Evaluation_Rubric.pdf">
+   Presentation Evaluation Rubric
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exams
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="course_materials/MidtermStudyGuide.html">
+   Midterm Study Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daily Content
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_1.html">
+   Day 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-01/Day-01_In-Class_Overview-STUDENT.html">
+     In-class Notebook: Welcome to CMSE202
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_2.html">
+   Day 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-02/Day-02_Pre-Class_ReflectionAndCommandLineInterface-STUDENT.html">
+     Pre-Class Assignment: Reflection and an introduction to the Command Line Interface (CLI)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-02/Day-02_In-Class_CommandLineInterface-STUDENT.html">
+     In-class Notebook: Command line interface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_3.html">
+   Day 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-03/Day-03_Pre-Class_PythonReview%2BGitIntro-STUDENT.html">
+     Pre-Class Assignment: Python Review and Intro to Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-03/Day-03_In-Class_GitPractice-STUDENT.html">
+     In-Class Assignment: Practice with Git and GitHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_4.html">
+   Day 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-04/Day-04_Pre-Class_DownloadingFilesAndInstallingPackages-STUDENT.html">
+     Pre-class Assignment: Python Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-04/Day-04_In-Class_PythonPackagesAndMapPlotting-STUDENT.html">
+     In-class Assignment: Installing Python Packages and Plotting with Maps in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_5.html">
+   Day 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-05/Day-05_Pre-Class_PandasReview-STUDENT.html">
+     Pre-Class Assignment: Pandas Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-05/Day-05_In-Class_PandasReview-STUDENT.html">
+     In-Class Assignment: Reviewing Pandas and exploring data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_6.html">
+   Day 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-06/Day-06_Pre-class_ObjectsClasses-STUDENT.html">
+     Pre-class Assignment: Introduction to Object Oriented Programming (OOP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-06/Day-06_In-Class_ObjectsClasses-STUDENT.html">
+     In-class Assignment: We have a Zoo!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_7.html">
+   Day 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-07/Day-07_Pre-class_ObjectInheritanceAndComposition-STUDENT.html">
+     Pre-class Assignment: object inheritance and composition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-07/Day-07_In-Class_ObjectInheritanceAndComposition-STUDENT.html">
+     In-class Assignment: We have a Zoo! (part 2)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_8.html">
+   Day 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-08/Day-08_Pre-Class_SuperbugsABM-STUDENT.html">
+     Pre-Class Assignment: Agent-based Modeling of Superbugs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-08/Day-08_In-Class_ABMSuperbugs1-STUDENT.html">
+     In-Class Assignment: Simulating Superbugs using agent-based modeling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_9.html">
+   Day 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-09/Day-09_Pre-Class_OOPAntForaging-STUDENT.html">
+     Pre-Class Assignment: Reviewing another agent-based model built using Object Oriented Programming (OOP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-09/Day-09_In-Class_ABMSuperbugs2-STUDENT.html">
+     In-Class Assignment: Agent Based Modeling of Superbugs (part 2)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_10.html">
+   Day 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-10/Day-10_Pre-Class_GraphTheory-STUDENT.html">
+     Pre-Class Assignment: Conflicts in Git and Graph Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-10/Day-10_In-Class_GraphTheory-STUDENT.html">
+     In-Class Assignment: Graph Theory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_11.html">
+   Day 11
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-11/Day-11_Pre-Class_GraphTheoryCellTowers-STUDENT.html">
+     Pre-class Assignment: Project Brainstorming &amp; Graph Theory and Cell Towers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-11/Day-11_In-Class_GraphTheoryCellTowers-STUDENT.html">
+     In-class Assignment: Graph Theory and Cell Towers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_12.html">
+   Day 12
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-12/Day-12_In-Class_ProjectProposals-STUDENT.html">
+     In-Class Assignment: Reviewing Project Ideas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_13.html">
+   Day 13
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-13/Day-13_Pre-Class_Regression-STUDENT.html">
+     Pre-Class Assignment: Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-13/Day-13_In-Class-Regression-STUDENT.html">
+     In-Class Assignment: Linear Regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="section_files/day_14.html">
+   Day 14
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daily/Day-14/Day-14_Pre-Class-PolynomialRegression-STUDENT.html">
+     Pre-Class Assignment: Polynomial Regression
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Homework
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="homework/SS24/HW-01/HW-01_GitPracticeDebuggingPythonPackagesAndClasses-STUDENT.html">
+   Homework 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homework/SS24/HW-02/HW-02_ABMandGraphTheory-STUDENT.html">
+   Homework 2
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-details">
+   Course Details
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructor-information">
+   Instructor Information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#section-instructors">
+     Section Instructors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teaching-assistants">
+     Teaching Assistants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-assistants">
+     Learning Assistants
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#office-hours-help-room-calendar">
+   Office hours/Help room calendar
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Computational Modeling and Data Analysis II</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-details">
+   Course Details
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructor-information">
+   Instructor Information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#section-instructors">
+     Section Instructors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teaching-assistants">
+     Teaching Assistants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-assistants">
+     Learning Assistants
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#office-hours-help-room-calendar">
+   Office hours/Help room calendar
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="computational-modeling-and-data-analysis-ii">
+<h1>Computational Modeling and Data Analysis II<a class="headerlink" href="#computational-modeling-and-data-analysis-ii" title="Permalink to this headline">#</a></h1>
+<section id="course-details">
+<h2>Course Details<a class="headerlink" href="#course-details" title="Permalink to this headline">#</a></h2>
+<p>Here are some quick links to important course content:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="course_materials/CMSE202_Syllabus.html"><span class="doc std std-doc">Course Syllabus</span></a></p></li>
+<li><p><a class="reference internal" href="course_materials/CMSE202_Calendar.html"><span class="doc std std-doc">Course Calendar</span></a></p></li>
+<li><p><a class="reference external" href="https://calendar.google.com/calendar/embed?src=c_0de101aa4aad878cb062781264f14079ec6020b1f0a547d6ffbc5769317b5409%40group.calendar.google.com&amp;ctz=America%2FNew_York">Office Hours Schedule</a></p>
+<ul>
+<li><p>See the bottom of this page for an embedded version.</p></li>
+<li><p>The calendar events contain the zoom links for office hours and help room. For the TA and LA Help Room hours, the zoom link is the same for all sessions and the passcode is <code class="docutils literal notranslate"><span class="pre">cmse202</span></code>. The course instructors have unique zoom links for their office hours.</p></li>
+</ul>
+</li>
+</ul>
+<!--
+	* The Zoom room for TA/LA help room hours is [LINK TO BE ADDED SOON]().
+	* Contact your course instructor for their Zoom room for office hours.
+-->
+<ul class="simple">
+<li><p><a class="reference internal" href="course_materials/SoftwareSetupGuide.html"><span class="doc std std-doc">Software Setup Guide</span></a></p></li>
+</ul>
+<!--
+* [Semester Project Details](/course_documents/semester_project_details.pdf)
+
+* [Semester Project Grading Rubric and Requirements](/course_documents/CMSE202_FinalProjectRequirementsAndGradingRubric.html)
+-->
+<p>Course assignments will be distributed via this page and turned in on <a class="reference external" href="https://d2l.msu.edu/">Desire 2 Learn</a>.</p>
+<p>General course discussion and assistance will be held in the <code class="docutils literal notranslate"><span class="pre">#cmse202-s24-help</span></code> channel on the <a class="reference external" href="https://cmse-courses.slack.com">CMSE Slack space</a>.
+There are also section specific channels in the format of <code class="docutils literal notranslate"><span class="pre">#cmse202-###-s24</span></code> where “###” corresponds to the section number.</p>
+</section>
+<hr class="docutils" />
+<section id="instructor-information">
+<h2>Instructor Information<a class="headerlink" href="#instructor-information" title="Permalink to this headline">#</a></h2>
+<section id="section-instructors">
+<h3>Section Instructors<a class="headerlink" href="#section-instructors" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><strong>Yang Yang</strong> (Section 001), <a class="reference external" href="mailto:yangy5&#37;&#52;&#48;msu&#46;edu">yangy5<span>&#64;</span>msu<span>&#46;</span>edu</a><br />
+Associate Professor<br />
+Department of Computational Mathematics, Science and Engineering</p></li>
+<li><p><strong>Santhosh Karnik</strong> (Section 002), <a class="reference external" href="mailto:karniksa&#37;&#52;&#48;msu&#46;edu">karniksa<span>&#64;</span>msu<span>&#46;</span>edu</a><br />
+Assistant Professor<br />
+Department of Computational Mathematics, Science and Engineering</p></li>
+<li><p><strong>Saiprasad Ravishankar</strong> (Section 003), <a class="reference external" href="mailto:ravisha3&#37;&#52;&#48;msu&#46;edu">ravisha3<span>&#64;</span>msu<span>&#46;</span>edu</a><br />
+Assistant Professor<br />
+Departments of Computational Mathematics, Science, and Engineering; Biomedical Engineering</p></li>
+<li><p><strong>Nathan Haut</strong> (Section 004), <a class="reference external" href="mailto:hautnath&#37;&#52;&#48;msu&#46;edu">hautnath<span>&#64;</span>msu<span>&#46;</span>edu</a><br />
+Assistant Professor<br />
+Departments of Computational Mathematics, Science, and Engineering</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="teaching-assistants">
+<h3>Teaching Assistants<a class="headerlink" href="#teaching-assistants" title="Permalink to this headline">#</a></h3>
+<p>Affan Malik (Section 001),
+<a class="reference external" href="mailto:malikaff&#37;&#52;&#48;msu&#46;edu">malikaff<span>&#64;</span>msu<span>&#46;</span>edu</a></p>
+<p>Seref Berk Atik (Section 002),
+<a class="reference external" href="mailto:atiksere&#37;&#52;&#48;msu&#46;edu">atiksere<span>&#64;</span>msu<span>&#46;</span>edu</a></p>
+<p>Omeiza Olumoye (Section 003),
+<a class="reference external" href="mailto:olumoyeo&#37;&#52;&#48;msu&#46;edu">olumoyeo<span>&#64;</span>msu<span>&#46;</span>edu</a></p>
+<p>Amanda Bowerman (Section 004),
+<a class="reference external" href="mailto:bowerm37&#37;&#52;&#48;msu&#46;edu">bowerm37<span>&#64;</span>msu<span>&#46;</span>edu</a></p>
+</section>
+<hr class="docutils" />
+<section id="learning-assistants">
+<h3>Learning Assistants<a class="headerlink" href="#learning-assistants" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Ishita Kokil &amp; Bryan Jurado (Section 001)</p></li>
+<li><p>Erin Syerson (Section 002)</p></li>
+<li><p>Kofi Debrah &amp; Joseph Dougherty (Section 003)</p></li>
+<li><p>Heidi Olsen &amp; Lydia Valtadoros (Section 004)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="office-hours-help-room-calendar">
+<h2>Office hours/Help room calendar<a class="headerlink" href="#office-hours-help-room-calendar" title="Permalink to this headline">#</a></h2>
+<p>Help room hours and locations for all CMSE 202 Instructors, TAs, and LAs can be found in the events on the following calendar. For the TA and LA Help Room hours, the zoom link is the same for all sessions and the passcode is <code class="docutils literal notranslate"><span class="pre">cmse202</span></code>. The course instructors have unique zoom links for their office hours.</p>
+<iframe src="https://calendar.google.com/calendar/embed?src=c_0de101aa4aad878cb062781264f14079ec6020b1f0a547d6ffbc5769317b5409%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="course_materials/CMSE202_Syllabus.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CMSE 202</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MSU CMSE<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
